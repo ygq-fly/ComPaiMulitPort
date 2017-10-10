@@ -1,0 +1,4 @@
+E:\新建文件夹 (2)\JcPim\jcPimSoftware\obj\Debug\jcPimSoftware.exe
+E:\新建文件夹 (2)\JcPim\jcPimSoftware\obj\Debug\jcPimSoftware.pdb
+D:\ComPaiMulitPort\jcPimSoftware\obj\Debug\jcPimSoftware.exe
+D:\ComPaiMulitPort\jcPimSoftware\obj\Debug\jcPimSoftware.pdb

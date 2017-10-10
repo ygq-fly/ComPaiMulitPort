@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5073CBE8-FDDC-4A35-B541-45EDA7BD897A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>jcPimSoftware</RootNamespace>
+    <AssemblyName>jcPimSoftware</AssemblyName>
+    <StartupObject>jcPimSoftware.Program</StartupObject>
+    <ApplicationIcon>pim.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files (x86)\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com_io_ctl, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Release\com_io_ctl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SpectrumLib, Version=1.1.2.2050, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Release\SpectrumLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CurrentPortData.cs" />
+    <Compile Include="CustomScrollbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\Config.designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\GlobalConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\GlobalConfiguration.Designer.cs">
+      <DependentUpon>GlobalConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\LockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\LockForm.Designer.cs">
+      <DependentUpon>LockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\SpecificsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\SpecificsForm.designer.cs">
+      <DependentUpon>SpecificsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\SystemLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\SystemLock.Designer.cs">
+      <DependentUpon>SystemLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\configure\TxRxCal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\configure\TxRxCal.designer.cs">
+      <DependentUpon>TxRxCal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\HarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\HarForm.Designer.cs">
+      <DependentUpon>HarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarFreqForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarFreqForm.Designer.cs">
+      <DependentUpon>HarFreqForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarReadDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarReadDataForm.Designer.cs">
+      <DependentUpon>HarReadDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarReadSettingFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarReadSettingFileForm.Designer.cs">
+      <DependentUpon>HarReadSettingFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSaveDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSaveDataForm.Designer.cs">
+      <DependentUpon>HarSaveDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSaveSettingFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSaveSettingFileForm.Designer.cs">
+      <DependentUpon>HarSaveSettingFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\harmonic\subform\HarSettingForm.Designer.cs">
+      <DependentUpon>HarSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\IsolationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\IsolationForm.designer.cs">
+      <DependentUpon>IsolationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\AttenuatorPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\AttenuatorPic.designer.cs">
+      <DependentUpon>AttenuatorPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoFreqForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoFreqForm.Designer.cs">
+      <DependentUpon>IsoFreqForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoCALForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoCALForm.Designer.cs">
+      <DependentUpon>IsoCALForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSettingForm.Designer.cs">
+      <DependentUpon>IsoSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoReadDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoReadDataForm.Designer.cs">
+      <DependentUpon>IsoReadDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoReadSettingFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoReadSettingFileForm.Designer.cs">
+      <DependentUpon>IsoReadSettingFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSaveDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSaveDataForm.Designer.cs">
+      <DependentUpon>IsoSaveDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSaveSettingFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\isolation\subform\IsoSaveSettingFileForm.Designer.cs">
+      <DependentUpon>IsoSaveSettingFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\main\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\SocketAdmin.cs" />
+    <Compile Include="Forms\pim\subform\F1Reset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\F1Reset.Designer.cs">
+      <DependentUpon>F1Reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\PimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\PimForm.designer.cs">
+      <DependentUpon>PimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\PimServices.cs" />
+    <Compile Include="Forms\pim\subform\F2Reset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\F2Reset.Designer.cs">
+      <DependentUpon>F2Reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\ftpWeb.cs" />
+    <Compile Include="Forms\pim\subform\LianTaoMess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\LianTaoMess.Designer.cs">
+      <DependentUpon>LianTaoMess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimSaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimSaveForm.designer.cs">
+      <DependentUpon>PimSaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimSettingForm.designer.cs">
+      <DependentUpon>PimSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimTestProjectManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\PimTestProjectManage.Designer.cs">
+      <DependentUpon>PimTestProjectManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\ReadSettingFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\ReadSettingFiles.Designer.cs">
+      <DependentUpon>ReadSettingFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SaveSettingFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SaveSettingFile.Designer.cs">
+      <DependentUpon>SaveSettingFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\ReadFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\ReadFiles.Designer.cs">
+      <DependentUpon>ReadFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SqlLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SqlLogin.designer.cs">
+      <DependentUpon>SqlLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SqlServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pim\subform\SqlServer.Designer.cs">
+      <DependentUpon>SqlServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumATT.cs" />
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumDef.cs" />
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumMenuDeal.cs" />
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumOffset.cs" />
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumRBW.cs" />
+    <Compile Include="Forms\spectrum\CommonClass\SpectrumSPAN.cs" />
+    <Compile Include="Forms\spectrum\SpectrumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SpectrumForm.designer.cs">
+      <DependentUpon>SpectrumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormAttOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormAttOther.designer.cs">
+      <DependentUpon>FormAttOther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormDataRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormDataRead.Designer.cs">
+      <DependentUpon>FormDataRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormEntry.designer.cs">
+      <DependentUpon>FormEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormFreq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormFreq.designer.cs">
+      <DependentUpon>FormFreq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormOffset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormOffset.designer.cs">
+      <DependentUpon>FormOffset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormRev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormRev.Designer.cs">
+      <DependentUpon>FormRev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormRF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormRF.Designer.cs">
+      <DependentUpon>FormRF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormSaveData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormSaveData.Designer.cs">
+      <DependentUpon>FormSaveData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormScanCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormScanCount.designer.cs">
+      <DependentUpon>FormScanCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormSpanOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\spectrum\SubForm\FormSpanOther.designer.cs">
+      <DependentUpon>FormSpanOther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FunTimeout.cs" />
+    <Compile Include="Foundation\Log.cs" />
+    <Compile Include="Foundation\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotorSwitch.cs" />
+    <Compile Include="MsSwithc.cs" />
+    <Compile Include="Offset.cs" />
+    <Compile Include="Port.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Port.Designer.cs">
+      <DependentUpon>Port.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\test\FactoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\test\FactoryForm.Designer.cs">
+      <DependentUpon>FactoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormCalProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormCalProgress.Designer.cs">
+      <DependentUpon>FormCalProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrRead.Designer.cs">
+      <DependentUpon>FormVswrRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrSave.Designer.cs">
+      <DependentUpon>FormVswrSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrFreq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\FormVswrFreq.Designer.cs">
+      <DependentUpon>FormVswrFreq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\VswrSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\SubForm\VswrSettingForm.Designer.cs">
+      <DependentUpon>VswrSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\vswr\VswrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\vswr\VswrForm.designer.cs">
+      <DependentUpon>VswrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\CMessage.cs" />
+    <Compile Include="Foundation\FileManage\CopyProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\CopyProgress.designer.cs">
+      <DependentUpon>CopyProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\DelFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\DelFiles.designer.cs">
+      <DependentUpon>DelFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\FileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\FileManager.designer.cs">
+      <DependentUpon>FileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\Error.designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\FileClass.cs" />
+    <Compile Include="Foundation\FileManage\FileService.cs" />
+    <Compile Include="Foundation\FileManage\NewFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\NewFolder.designer.cs">
+      <DependentUpon>NewFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\Ok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\Ok.designer.cs">
+      <DependentUpon>Ok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\OkCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\OkCancel.Designer.cs">
+      <DependentUpon>OkCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\YesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\YesNo.Designer.cs">
+      <DependentUpon>YesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\FileManage\YesNoCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\FileManage\YesNoCancel.Designer.cs">
+      <DependentUpon>YesNoCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\GPIO.cs" />
+    <Compile Include="Foundation\ImagesManage.cs" />
+    <Compile Include="Foundation\LanguageHelp.cs" />
+    <Compile Include="Foundation\MessageID.cs" />
+    <Compile Include="Foundation\NativeMessage.cs" />
+    <Compile Include="Foundation\report\CsvReport.cs" />
+    <Compile Include="Foundation\report\JpgReport.cs" />
+    <Compile Include="Foundation\report\PdfReport.cs" />
+    <Compile Include="Foundation\report\PdfReport_Data.cs" />
+    <Compile Include="Foundation\utils\TouchPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foundation\utils\TouchPad.designer.cs">
+      <DependentUpon>TouchPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\configure\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\GlobalConfiguration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GlobalConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\LockForm.resx">
+      <DependentUpon>LockForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\SpecificsForm.resx">
+      <DependentUpon>SpecificsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\SystemLock.resx">
+      <DependentUpon>SystemLock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\TestForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\configure\TxRxCal.resx">
+      <DependentUpon>TxRxCal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\HarForm.resx">
+      <DependentUpon>HarForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarFreqForm.resx">
+      <DependentUpon>HarFreqForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarReadDataForm.resx">
+      <DependentUpon>HarReadDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarReadSettingFileForm.resx">
+      <DependentUpon>HarReadSettingFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarSaveDataForm.resx">
+      <DependentUpon>HarSaveDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarSaveSettingFileForm.resx">
+      <DependentUpon>HarSaveSettingFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\harmonic\subform\HarSettingForm.resx">
+      <DependentUpon>HarSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\IsolationForm.resx">
+      <DependentUpon>IsolationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\AttenuatorPic.resx">
+      <DependentUpon>AttenuatorPic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoFreqForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IsoFreqForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoCALForm.resx">
+      <DependentUpon>IsoCALForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoSettingForm.resx">
+      <DependentUpon>IsoSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoReadDataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IsoReadDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoReadSettingFileForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IsoReadSettingFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoSaveDataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IsoSaveDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\isolation\subform\IsoSaveSettingFileForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IsoSaveSettingFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\F1Reset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>F1Reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\PimForm.resx">
+      <DependentUpon>PimForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\F2Reset.resx">
+      <DependentUpon>F2Reset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\LianTaoMess.resx">
+      <DependentUpon>LianTaoMess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\PimSaveForm.resx">
+      <DependentUpon>PimSaveForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\PimSettingForm.resx">
+      <DependentUpon>PimSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\PimTestProjectManage.resx">
+      <DependentUpon>PimTestProjectManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\ReadSettingFiles.resx">
+      <DependentUpon>ReadSettingFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\SaveSettingFile.resx">
+      <DependentUpon>SaveSettingFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\ReadFiles.resx">
+      <DependentUpon>ReadFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\SqlLogin.resx">
+      <DependentUpon>SqlLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pim\subform\SqlServer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SqlServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SpectrumForm.resx">
+      <DependentUpon>SpectrumForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormAttOther.resx">
+      <DependentUpon>FormAttOther.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormDataRead.resx">
+      <DependentUpon>FormDataRead.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormEntry.resx">
+      <DependentUpon>FormEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormFreq.resx">
+      <DependentUpon>FormFreq.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormOffset.resx">
+      <DependentUpon>FormOffset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormRev.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormRev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormRF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormSaveData.resx">
+      <DependentUpon>FormSaveData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormScanCount.resx">
+      <DependentUpon>FormScanCount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\spectrum\SubForm\FormSpanOther.resx">
+      <DependentUpon>FormSpanOther.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\StartForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Port.resx">
+      <DependentUpon>Port.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\test\FactoryForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FactoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\SubForm\FormCalProgress.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormCalProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\SubForm\FormVswrFreq.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormVswrFreq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\SubForm\FormVswrRead.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormVswrRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\SubForm\FormVswrSave.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormVswrSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\SubForm\VswrSettingForm.resx">
+      <DependentUpon>VswrSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\vswr\VswrForm.resx">
+      <DependentUpon>VswrForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\CopyProgress.resx">
+      <DependentUpon>CopyProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\DelFiles.resx">
+      <DependentUpon>DelFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\FileManager.resx">
+      <DependentUpon>FileManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\NewFolder.resx">
+      <DependentUpon>NewFolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\Ok.resx">
+      <DependentUpon>Ok.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\OkCancel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OkCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\YesNo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>YesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\FileManage\YesNoCancel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>YesNoCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foundation\utils\TouchPad.resx">
+      <DependentUpon>TouchPad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings\App_Cnfgs.cs" />
+    <Compile Include="Settings\App_Fators.cs" />
+    <Compile Include="Settings\App_Settings.cs" />
+    <Compile Include="Settings\IniFile.cs" />
+    <Compile Include="Settings\RL0_Tables.cs" />
+    <Compile Include="Settings\Rx_Tables.cs" />
+    <Compile Include="Settings\Settings_Har.cs" />
+    <Compile Include="Settings\Settings_Iso.cs" />
+    <Compile Include="Settings\Settings_Pim.cs" />
+    <Compile Include="Settings\Settings_Sgn.cs" />
+    <Compile Include="Settings\Settings_Spc.cs" />
+    <Compile Include="Settings\Settings_Vsw.cs" />
+    <Compile Include="Settings\Specifics.cs" />
+    <Compile Include="Settings\Spectrum_Tables.cs" />
+    <Compile Include="Settings\Tx_Tables.cs" />
+    <Compile Include="Forms\pim\subform\sock.cs" />
+    <Compile Include="Sweeps\Har_Sweep.cs" />
+    <Compile Include="Sweeps\Iso_Sweep.cs" />
+    <Compile Include="Sweeps\ISweep.cs" />
+    <Compile Include="Sweeps\Pim_Sweep.cs" />
+    <Compile Include="Sweeps\Vsw_Sweep.cs" />
+    <Compile Include="TypeDefines\Code.cs" />
+    <Compile Include="TypeDefines\newclass.cs" />
+    <Compile Include="TypeDefines\RFSignal.cs" />
+    <Compile Include="TypeDefines\TypeDefines.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.1.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL" />
+    <Reference Include="jcXY2dPlotEx, Version=1.2.4.8888, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\代码区\jcPimCtrLib\jcXY2dPlotEx\bin\Release\jcXY2dPlotEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="susiGpio, Version=1.0.3959.24450, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\susiGpio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbMiddle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pim.ico" />
+    <None Include="Resources\NetPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+C:\Users\san\Desktop\Sync\JcPim(api)\jcPimSoftware\obj\x86\Debug\jcPimSoftware.exe
+C:\Users\san\Desktop\Sync\JcPim(api)\jcPimSoftware\obj\x86\Debug\jcPimSoftware.pdb

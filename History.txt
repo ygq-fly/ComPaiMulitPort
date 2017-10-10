@@ -1,0 +1,15 @@
+@修改历史2016-5-19,author-mashuai：
+1、收信机调整：
+目标：用于匹配低端工控机绘图过程的时序差
+--Configures.ini
+spectrum=3
+--Settings_Pim.ini
+rbw_spc=-1000
+scanband=0.015
+仅凡双收信机有效：
+specDelay = 10    //频谱线程延时分析，单位毫秒
+tsDelay = 100		//扫时循环延时，单位毫秒
+fsDelay = 150		//扫频循环处理，单位毫秒
+2、信号源/功放模块
+目标：减少不必要的通信交互时间，保持向前兼容
+方案：一次测试只用一次写读即完成。jRFSignal.dll引入RFFreqPowerSample方法
