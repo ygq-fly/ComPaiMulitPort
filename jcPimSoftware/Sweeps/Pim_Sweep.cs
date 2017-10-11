@@ -594,10 +594,18 @@ namespace jcPimSoftware
                         }
                         else
                         {
-                            bErrors2 = RF_Set(exe_params.DevInfo.RF_Addr1,
+
+                            //Ir_RF1_Set = del_RF1_Set.BeginInvoke(exe_params.DevInfo.RF_Addr1,
+                            //                                                  exe_params.RFPriority,
+                            //                                                  item[i].P1 + App_Settings.spc.OutTxRef, item[i].Tx1,
+                            //                                                  null, null);
+                         
+                            //bErrors1 = del_RF1_Set.EndInvoke(Ir_RF1_Set);
+                            bErrors1 = RF_Set(exe_params.DevInfo.RF_Addr1,
                                             exe_params.RFPriority,
                                             item[i].P1 + App_Settings.spc.OutTxRef, item[i].Tx1);
-
+                            if (App_Configure.Cnfgs.Spectrum != SpectrumType.FanShuang)           
+                            Thread.Sleep(200);
                             Ir_Spec = del_spe.BeginInvoke(exe_params.SpeParam, null, null);
                         }    
 
@@ -683,7 +691,8 @@ namespace jcPimSoftware
                             bErrors2 = RF_Set(exe_params.DevInfo.RF_Addr2,
                                             exe_params.RFPriority,
                                             item[i].P2 + App_Settings.spc.OutTxRef, item[i].Tx2);
-
+                            if (App_Configure.Cnfgs.Spectrum != SpectrumType.FanShuang)
+                                Thread.Sleep(50);
                             Ir_Spec = del_spe.BeginInvoke(exe_params.SpeParam, null, null);
                         }                        
                     }
